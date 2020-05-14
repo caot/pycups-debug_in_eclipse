@@ -1,7 +1,7 @@
 /*
  ============================================================================
  Name        : pycups-debug_in_eclipse.c
- Author      : 
+ Author      :
  Version     :
  Copyright   : Your copyright notice
  Description : Hello World in C, Ansi-style
@@ -11,7 +11,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(void) {
-	puts("!!!Hello World!!!"); /* prints !!!Hello World!!! */
-	return EXIT_SUCCESS;
+#include "py_import_call_execute.h"
+
+int main(int argc, const char *argv[]) {
+
+  for (int i = 0; i < argc; i++) {
+    printf("%s\n", argv[i]);
+  }
+
+  return import_call_execute(argc, argv);
 }

@@ -29,7 +29,7 @@ all: pycups-debug_in_eclipse
 pycups-debug_in_eclipse: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C Linker'
-	gcc  -o "pycups-debug_in_eclipse" $(OBJS) $(USER_OBJS) $(LIBS)
+	gcc -L/home/tangc/apps/python-3.8.2/lib -lpython3.8 -lcrypt -lpthread -ldl  -lutil -lm -o "pycups-debug_in_eclipse" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
